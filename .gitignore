@@ -1,7 +1,7 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
+# /src/components/app/app.jsx-style/app.module.scss
+# /src/components/app/app.jsx-style/app.module.css.map
 /.pnp
 .pnp.js
 
