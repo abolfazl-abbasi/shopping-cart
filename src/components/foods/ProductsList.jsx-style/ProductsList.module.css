@@ -1,0 +1,200 @@
+.products {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: '1 2';
+  max-width: 1500px;
+  width: 100%;
+  margin: auto;
+}
+
+@media (max-width: 1270px) {
+  .products {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: '1';
+  }
+}
+
+.product:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: 1;
+}
+
+.product:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: 2;
+}
+
+.product {
+  height: 130px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-shadow: 0 0 10px #eee;
+          box-shadow: 0 0 10px #eee;
+  border-radius: 15px;
+  margin: 20px 15px 0;
+}
+
+.product .productImage {
+  width: 110px;
+  height: 90px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.product .productTitles .productIngredients {
+  font-size: 10px;
+  color: #9a9a9a;
+  width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 11px 0;
+}
+
+.product .productTitles .productTitle {
+  margin: 11px 0;
+}
+
+.product .productTitles .productPrice {
+  margin: 11px 0;
+}
+
+.product .handlers .crement {
+  width: 110px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.product .handlers .crement .quantity {
+  background-color: white;
+  color: #9333EA;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 2px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.product .handlers .crement .btn {
+  width: 30px;
+  height: 30px;
+  background-color: #F3E8FF;
+  color: #7E22CE;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.product .handlers .crement .btn:hover {
+  background-color: #E9D5FF;
+  color: #6B21A8;
+}
+
+.product .handlers .crement .delete {
+  background-color: #FECACA;
+  color: #B91C1C;
+  padding: 5px 0px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.product .handlers .crement .delete:hover {
+  background-color: #FCA5A5;
+  color: #991B1B;
+}
+
+.product .handlers .like {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  position: relative;
+  bottom: 5px;
+  left: 6px;
+  color: #EF4444;
+}
+
+@media (max-width: 660px) {
+  .product {
+    height: 200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-shadow: 0 0 10px #eee;
+            box-shadow: 0 0 10px #eee;
+    border-radius: 15px;
+    margin: 20px 15px 0;
+  }
+  .product .productImage {
+    width: 180px;
+    height: 130px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+  }
+  .product .handlers {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .product .handlers .crement {
+    position: relative;
+    right: 185px;
+    bottom: 30px;
+  }
+  .product .handlers .like {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    position: relative;
+    bottom: 170px;
+    right: 290px;
+    color: #EF4444;
+  }
+}
+/*# sourceMappingURL=ProductsList.module.css.map */

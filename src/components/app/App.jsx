@@ -1,12 +1,16 @@
 import React from 'react';
-import styles from './App.jsx-style/app.module.css';
+import ContextProvider from '../providers/contextProvider';
+import Products from '../foods/ProductsList.jsx';
+import Navbar from '../Navbar/Navbar.jsx';
+import './App.jsx-style/app.module.css';
 
 const App = () => {
   return (
-    <>
-      <h1>Hello World!</h1>
-    </>
+    <ContextProvider>
+      <Navbar/>
+      <Products/>
+    </ContextProvider>
   );
 }
- 
+
 export default App;

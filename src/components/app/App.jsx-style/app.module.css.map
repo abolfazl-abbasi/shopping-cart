@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,IAAI,CAAA;EACF,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,WAAW,EAAE,2HAA2H;CACzI",
+    "mappings": "AAEA,UAAU;EACR,WAAW,EAAE,MAAM;EACnB,GAAG,EAAE,wCAAwC;;;AAG/C,AAAA,CAAC,CAAA;EACC,WAAW,EAAE,oHAAoH;EAEjI,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,GAAG;EACd,UAAU,EAAE,UAAU;CACvB;;AAED,AAAA,IAAI,CAAA;EACF,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;CACX",
     "sources": [
-        "app.module.scss"
+        "app.module.scss",
+        "../../tools/colors/_colors.scss"
     ],
     "names": [],
     "file": "app.module.css"
