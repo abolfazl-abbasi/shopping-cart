@@ -182,7 +182,7 @@
   width: 300px;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: wrap;
   margin: 11px 0;
 }
 
@@ -297,9 +297,9 @@
   transition: .5s;
 }
 
-@media (max-width: 660px) {
+@media (max-width: 600px) {
   .product {
-    height: 200px;
+    height: 250px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -320,7 +320,7 @@
     height: 130px;
     border-radius: 10px;
     overflow: hidden;
-    margin: 20px 0;
+    margin: 20px 15px;
   }
   .product .handlers {
     display: -webkit-box;
@@ -335,8 +335,6 @@
   }
   .product .handlers .crement {
     position: relative;
-    right: 185px;
-    bottom: 30px;
   }
   .product .handlers .like {
     display: -webkit-box;
@@ -345,12 +343,6 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: end;
-    position: relative;
-    bottom: 170px;
-    right: 290px;
     color: #EF4444;
   }
 }
