@@ -1,5 +1,29 @@
 @import './../../tools/colors/colors';
 
+@keyframes deleteIcon {
+  0% {bottom: 30px;}
+  80% {bottom: -3px;}
+  100% {bottom: -1px;}
+}
+
+@keyframes decrementIcon {
+  0% {bottom: 0px;}
+  100% {bottom: -30px;}
+}
+
+@keyframes delete {
+  10% {top: 2px;}
+  20% {top: -2px;}
+  30% {top: 2px;}
+  40% {top: -2px;}
+  50% {top: 2px;}
+  60% {top: -2px;}
+  70% {top: 2px;}
+  80% {top: -2px;}
+  90% {top: 2px;}
+  100% {top: -2px;}
+}
+
 .products{
   display: grid;
   grid-template-areas: '1 2';
@@ -15,8 +39,6 @@
   }
 }
 
-
-
 .product:nth-child(1){
   grid-area: 1;
 }
@@ -25,10 +47,16 @@
 }
 
 .product{
+  .productsContent{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
   height: 130px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 15px;
   flex-wrap: wrap;
   box-shadow: 0 0 10px #eee;
   border-radius: 15px;
@@ -38,6 +66,7 @@
     height: 90px;
     border-radius: 10px;
     overflow: hidden;
+    margin: 0 0 0 20px;
   }
   .productTitles{
     .productIngredients{
@@ -80,7 +109,9 @@
         border-radius: 20px;
         border: none;
         cursor: pointer;
+        padding: 3px 0px;
         transition: .2s;
+        overflow: hidden;
         &:hover{
           background-color: $purple_200;
           color: $purple_800;
@@ -91,9 +122,33 @@
         color: $red_700;
         padding: 5px 0px;
         transition: .2s;
+        overflow: hidden;
+        position: relative;
+        animation: delete .4s ease-out;
         &:hover{
           background-color: $red_300;
           color: $red_800;
+        }
+        i{
+          position: relative;
+          right: 2px;
+          animation: deleteIcon .7s ease-in-out forwards;
+        }
+        span{
+          position: relative;
+          left: 7px;
+          animation: decrementIcon .7s ease-in-out forwards;
+        }
+      }
+      .decrement{
+        i{
+          position: relative;
+          bottom: 30px;
+        }
+        span{
+          position: relative;
+          bottom: 0px;
+          left: 6px;
         }
       }
     }
@@ -105,9 +160,7 @@
       bottom: 5px;
       left: 6px;
       color: $red_500;
-      &:hover{
-
-      }
+      transition: .5s;
     }
   }
 }

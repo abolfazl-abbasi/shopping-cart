@@ -1,3 +1,111 @@
+@-webkit-keyframes deleteIcon {
+  0% {
+    bottom: 30px;
+  }
+  80% {
+    bottom: -3px;
+  }
+  100% {
+    bottom: -1px;
+  }
+}
+
+@keyframes deleteIcon {
+  0% {
+    bottom: 30px;
+  }
+  80% {
+    bottom: -3px;
+  }
+  100% {
+    bottom: -1px;
+  }
+}
+
+@-webkit-keyframes decrementIcon {
+  0% {
+    bottom: 0px;
+  }
+  100% {
+    bottom: -30px;
+  }
+}
+
+@keyframes decrementIcon {
+  0% {
+    bottom: 0px;
+  }
+  100% {
+    bottom: -30px;
+  }
+}
+
+@-webkit-keyframes delete {
+  10% {
+    top: 2px;
+  }
+  20% {
+    top: -2px;
+  }
+  30% {
+    top: 2px;
+  }
+  40% {
+    top: -2px;
+  }
+  50% {
+    top: 2px;
+  }
+  60% {
+    top: -2px;
+  }
+  70% {
+    top: 2px;
+  }
+  80% {
+    top: -2px;
+  }
+  90% {
+    top: 2px;
+  }
+  100% {
+    top: -2px;
+  }
+}
+
+@keyframes delete {
+  10% {
+    top: 2px;
+  }
+  20% {
+    top: -2px;
+  }
+  30% {
+    top: 2px;
+  }
+  40% {
+    top: -2px;
+  }
+  50% {
+    top: 2px;
+  }
+  60% {
+    top: -2px;
+  }
+  70% {
+    top: 2px;
+  }
+  80% {
+    top: -2px;
+  }
+  90% {
+    top: 2px;
+  }
+  100% {
+    top: -2px;
+  }
+}
+
 .products {
   display: -ms-grid;
   display: grid;
@@ -35,8 +143,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 15px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-shadow: 0 0 10px #eee;
@@ -45,11 +155,25 @@
   margin: 20px 15px 0;
 }
 
+.product .productsContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 .product .productImage {
   width: 110px;
   height: 90px;
   border-radius: 10px;
   overflow: hidden;
+  margin: 0 0 0 20px;
 }
 
 .product .productTitles .productIngredients {
@@ -102,8 +226,10 @@
   border-radius: 20px;
   border: none;
   cursor: pointer;
+  padding: 3px 0px;
   -webkit-transition: .2s;
   transition: .2s;
+  overflow: hidden;
 }
 
 .product .handlers .crement .btn:hover {
@@ -117,11 +243,40 @@
   padding: 5px 0px;
   -webkit-transition: .2s;
   transition: .2s;
+  overflow: hidden;
+  position: relative;
+  -webkit-animation: delete .4s ease-out;
+          animation: delete .4s ease-out;
 }
 
 .product .handlers .crement .delete:hover {
   background-color: #FCA5A5;
   color: #991B1B;
+}
+
+.product .handlers .crement .delete i {
+  position: relative;
+  right: 2px;
+  -webkit-animation: deleteIcon .7s ease-in-out forwards;
+          animation: deleteIcon .7s ease-in-out forwards;
+}
+
+.product .handlers .crement .delete span {
+  position: relative;
+  left: 7px;
+  -webkit-animation: decrementIcon .7s ease-in-out forwards;
+          animation: decrementIcon .7s ease-in-out forwards;
+}
+
+.product .handlers .crement .decrement i {
+  position: relative;
+  bottom: 30px;
+}
+
+.product .handlers .crement .decrement span {
+  position: relative;
+  bottom: 0px;
+  left: 6px;
 }
 
 .product .handlers .like {
@@ -138,6 +293,8 @@
   bottom: 5px;
   left: 6px;
   color: #EF4444;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 @media (max-width: 660px) {

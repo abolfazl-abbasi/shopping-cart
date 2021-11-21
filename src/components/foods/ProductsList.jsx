@@ -9,11 +9,13 @@ const Products = () => {
     <div className={`${styles.products}`}>
       {products.map(product => 
         <div key={product._id} className={`${styles.product}`}>
-          <img loading='lazy' className={`${styles.productImage}`} width='50px' src={product.image} alt={product.title}/>
-          <div className={`${styles.productTitles}`}>
-            <p className={`${styles.productTitle}`}>{product.title}</p>
-            <p className={`${styles.productIngredients}`}>{product.ingredients}</p>
-            <p className={`${styles.productPrice}`}>{product.price} تومان</p>
+          <div className={`${styles.productsContent}`}>
+            <img loading='lazy' className={`${styles.productImage}`} width='50px' src={product.image} alt={product.title}/>
+            <div className={`${styles.productTitles}`}>
+              <p className={`${styles.productTitle}`}>{product.title}</p>
+              <p className={`${styles.productIngredients}`}>{product.ingredients}</p>
+              <p className={`${styles.productPrice}`}>{product.price} تومان</p>
+            </div>
           </div>
           <div className={`${styles.handlers}`}>
             <div className={`${styles.like}`}>
@@ -21,9 +23,9 @@ const Products = () => {
               <p><i onClick={() => handleLike(product)} className={product.liked === true ? "bi bi-heart-fill" : "bi bi-heart"}></i></p>
             </div>
             <div className={`${styles.crement}`}>
-              <button onClick={() => handleDecrement(product)} className={`${styles.increment} ${styles.btn} ${product.quantity <= 1 && styles.delete}`}>{product.quantity <= 1 ? <i className="bi bi-trash"></i> : '-'}</button>
+              <button onClick={() => handleDecrement(product)} className={`${styles.btn} ${product.quantity <= 1 ? styles.delete : styles.decrement}`}><i className="bi bi-trash"></i><span>-</span></button>
               <p className={`${styles.quantity}`}>{product.quantity}</p>
-              <button onClick={() => handleIncrement(product)} className={`${styles.decrement} ${styles.btn}`}>+</button>
+              <button onClick={() => handleIncrement(product)} className={`${styles.btn}`}>+</button>
             </div>
           </div>
         </div>
