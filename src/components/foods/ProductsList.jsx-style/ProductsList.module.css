@@ -232,7 +232,7 @@
   overflow: hidden;
 }
 
-.product .handlers .crement .btn:hover {
+.product .handlers .crement .btn:hover, .product .handlers .crement .btn:focus {
   background-color: #E9D5FF;
   color: #6B21A8;
 }
@@ -249,7 +249,7 @@
           animation: delete .4s ease-out;
 }
 
-.product .handlers .crement .delete:hover {
+.product .handlers .crement .delete:hover, .product .handlers .crement .delete:focus {
   background-color: #FCA5A5;
   color: #991B1B;
 }

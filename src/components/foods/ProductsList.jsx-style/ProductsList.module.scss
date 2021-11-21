@@ -112,7 +112,7 @@
         padding: 3px 0px;
         transition: .2s;
         overflow: hidden;
-        &:hover{
+        &:hover , &:focus{
           background-color: $purple_200;
           color: $purple_800;
         }
@@ -125,7 +125,7 @@
         overflow: hidden;
         position: relative;
         animation: delete .4s ease-out;
-        &:hover{
+        &:hover , &:focus{
           background-color: $red_300;
           color: $red_800;
         }
