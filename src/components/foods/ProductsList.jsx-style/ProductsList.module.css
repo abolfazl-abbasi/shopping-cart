@@ -299,7 +299,7 @@
 
 @media (max-width: 600px) {
   .product {
-    height: 250px;
+    height: 220px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -313,7 +313,7 @@
     -webkit-box-shadow: 0 0 10px #eee;
             box-shadow: 0 0 10px #eee;
     border-radius: 15px;
-    margin: 20px 15px 0;
+    margin: 20px 0 0 15px;
   }
   .product .productImage {
     width: 180px;
@@ -326,12 +326,19 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 200px;
+    position: relative;
+    top: -85px;
+    left: -150px;
   }
   .product .handlers .crement {
     position: relative;
@@ -343,6 +350,8 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    position: relative;
+    top: -90px;
     color: #EF4444;
   }
 }
