@@ -5,6 +5,11 @@
   src: url('./../../tools/fonts/Dirooz-FD.ttf');
 }
 
+::selection{
+  background-color: $purple_400;
+  color: white;
+}
+
 *{
   font-family: dirooz, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   // box-sizing: border-box;

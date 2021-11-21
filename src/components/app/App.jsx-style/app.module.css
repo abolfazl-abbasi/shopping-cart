@@ -3,6 +3,16 @@
   src: url("./../../tools/fonts/Dirooz-FD.ttf");
 }
 
+::-moz-selection {
+  background-color: #C084FC;
+  color: white;
+}
+
+::selection {
+  background-color: #C084FC;
+  color: white;
+}
+
 * {
   font-family: dirooz, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   outline: none;
