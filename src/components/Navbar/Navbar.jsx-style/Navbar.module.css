@@ -1,9 +1,11 @@
 .navbar {
-  width: 100%;
   height: 70px;
   background-color: white;
   -webkit-box-shadow: 0 0 10px #eee;
           box-shadow: 0 0 10px #eee;
+}
+
+.navbar .nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,6 +17,9 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   justify-items: baseline;
+  max-width: 1500px;
+  width: 100%;
+  margin: auto;
 }
 
 .navbar .countBox {
@@ -55,7 +60,7 @@
   cursor: pointer;
 }
 
-.navbar .brandName {
+.navbar .brandBox .brandName {
   width: 100%;
   cursor: pointer;
 }

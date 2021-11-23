@@ -7,15 +7,17 @@ const Navbar = () => {
   return (
     <>
       <div className={`${styles.navbar}`}>
-        <div className={`${styles.countBox}`}>
-          <p className={`${styles.productsCountParagraph}`}> تعداد در سبد خرید : </p>
-          <span className={`${styles.productsCount}`}>{products.filter(p => (p.quantity > 0)).length}</span>
-        </div>
-        <div className={`${styles.brandBox}`}>
-          <h2 className={`${styles.brandName}`}>صاحب فود</h2>
-        </div>
-        <div className={`${styles.searchBox}`}>
-          <input className={`${styles.searchInput}`} placeholder='جستجو در صاحب فود' type="search"/>
+        <div className={`${styles.nav}`}>
+          <div className={`${styles.countBox}`}>
+            <p className={`${styles.productsCountParagraph}`}> تعداد در سبد خرید : </p>
+            <span className={`${styles.productsCount}`}>{products.filter(p => (p.quantity > 0)).length}</span>
+          </div>
+          <div className={`${styles.brandBox}`}>
+            <h2 className={`${styles.brandName}`}>صاحب فود</h2>
+          </div>
+          <div className={`${styles.searchBox}`}>
+            <input className={`${styles.searchInput}`} placeholder='جستجو در صاحب فود' type="search"/>
+          </div>
         </div>
       </div>
     </>

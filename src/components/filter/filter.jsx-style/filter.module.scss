@@ -1,0 +1,28 @@
+@import './../../tools/colors/colors';
+
+.filter{
+  max-width: 1500px;
+  width: 100%;
+  margin: 20px auto 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0 20px;
+  .select{
+    width: 100%;
+    background-color: $purple_100;
+    color: $purple_700;
+    margin: 0 10px;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 5px;
+    option{
+      color: $purple_700;
+      border: none;
+    }
+  }
+  .selectGroup{
+    width: 200px;
+  }
+}

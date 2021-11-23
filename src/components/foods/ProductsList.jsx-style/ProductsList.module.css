@@ -120,19 +120,9 @@
     display: -ms-grid;
     display: grid;
         grid-template-areas: '1';
+    max-width: 1460px;
+    width: 100%;
   }
-}
-
-.product:nth-child(1) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: 1;
-}
-
-.product:nth-child(2) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  grid-area: 2;
 }
 
 .product {
@@ -177,21 +167,21 @@
 }
 
 .product .productTitles .productIngredients {
-  font-size: 10px;
+  font-size: 11px;
   color: #9a9a9a;
   width: 300px;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: wrap;
-  margin: 11px 0;
+  white-space: nowrap;
+  margin: 8px 0;
 }
 
 .product .productTitles .productTitle {
-  margin: 11px 0;
+  margin: 10px 0;
 }
 
 .product .productTitles .productPrice {
-  margin: 11px 0;
+  margin: 10px 0;
 }
 
 .product .handlers .crement {

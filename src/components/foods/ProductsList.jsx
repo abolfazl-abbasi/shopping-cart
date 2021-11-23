@@ -7,10 +7,10 @@ const Products = () => {
   const {handleIncrement , handleDecrement , handleLike} = useProductsContextProvider()
   return (
     <div className={`${styles.products}`}>
-      {products.map(product => 
+      {products.map(product =>
         <div key={product._id} className={`${styles.product}`}>
           <div className={`${styles.productsContent}`}>
-            <img loading='lazy' className={`${styles.productImage}`} width='50px' src={product.image} alt={product.title}/>
+            <img loading='lazy' className={`${styles.productImage}`} src={product.image} alt={product.title}/>
             <div className={`${styles.productTitles}`}>
               <p className={`${styles.productTitle}`}>{product.title}</p>
               <p className={`${styles.productIngredients}`}>{product.ingredients}</p>

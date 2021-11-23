@@ -36,22 +36,12 @@
   .products{
     display: grid;
     grid-template-areas: '1';
+    max-width: 1460px;
+    width: 100%;
   }
-}
-
-.product:nth-child(1){
-  grid-area: 1;
-}
-.product:nth-child(2){
-  grid-area: 2;
 }
 
 .product{
-  .productsContent{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-  }
   height: 130px;
   display: flex;
   align-items: center;
@@ -61,6 +51,11 @@
   box-shadow: 0 0 10px #eee;
   border-radius: 15px;
   margin: 20px 15px 0;
+  .productsContent{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
   .productImage{
     width: 110px;
     height: 90px;
@@ -70,19 +65,19 @@
   }
   .productTitles{
     .productIngredients{
-      font-size: 10px;
+      font-size: 11px;
       color: rgb(154, 154, 154);
       width: 300px;
       overflow: hidden;
       text-overflow: ellipsis;
-      white-space: wrap;
-      margin: 11px 0;
+      white-space: nowrap;
+      margin: 8px 0;
     }
     .productTitle{
-      margin: 11px 0;
+      margin: 10px 0;
     }
     .productPrice{
-      margin: 11px 0;
+      margin: 10px 0;
     }
   }
   .handlers{

@@ -1,0 +1,36 @@
+.filter {
+  max-width: 1500px;
+  width: 100%;
+  margin: 20px auto 0;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  padding: 0 20px;
+}
+
+.filter .select {
+  width: 100%;
+  background-color: #F3E8FF;
+  color: #7E22CE;
+  margin: 0 10px;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 5px;
+}
+
+.filter .select option {
+  color: #7E22CE;
+  border: none;
+}
+
+.filter .selectGroup {
+  width: 200px;
+}
+/*# sourceMappingURL=filter.module.css.map */
