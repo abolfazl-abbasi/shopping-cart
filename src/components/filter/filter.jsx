@@ -1,43 +1,63 @@
-import { useGroups, useProductsContext, useProductsContextProvider } from '../providers/contextProvider';
-import { useState } from 'react';
-import styles from './filter.jsx-style/filter.module.css';
-import { getProducts } from '../../APIs/foodsFakeApi';
+import { useGroups, useProductsContextProvider } from "../providers/contextProvider";
+import styles from "./filter.jsx-style/filter.module.css";
+import { BiHeart } from "react-icons/bi";
 
 const Filter = () => {
-  // const products = useProductsContext()
-  const {handleFilter , handleSortedPrice} = useProductsContextProvider()
-  const groups = useGroups()
-
-  const [sort, setSort] = useState('')
-  const [filter, setFilter] = useState('')
-  
-  const handleSortedPricePro = (e) => {
-    handleSortedPrice(e);
-    setSort(e);
-  }
-
-  const handleFilterPro = (e) => {
-    handleFilter(e);
-    setFilter(e);
-  }
+  const { handleFilter, handleSorted, handleFavorites } = useProductsContextProvider();
+  const groups = useGroups();
 
   return (
     <>
       <div className={`${styles.filter}`}>
-        <select key='select1' className={`${styles.select} ${styles.selectGroup}`} onChange={(e) => handleFilterPro(e.target.value)}>
-          <option value="" key="" disabled selected>دسته بندی</option>
-          {groups.map((group) => 
-            <option value={group._id} key={group._id}>{group.name}</option>
-          )}
-        </select>
-        <select key='select2' className={`${styles.select} ${styles.selectGroup}`} onChange={(e) => handleSortedPricePro(e.target.value)}>
-          <option value="" key="" disabled selected>مرتب سازی</option>
-          <option value="highted" key="highted">بالاترین قیمت</option>
-          <option value="lowed" key="lowed">کمترین قیمت</option>
-        </select>
+        <div className={`${styles.ordered}`}>
+          <select
+            key="select1"
+            className={`${styles.select} ${styles.selectGroup}`}
+            onChange={(e) => handleFilter(e.target.value)}
+            defaultValue={"All"}
+          >
+            <option value="" key="all" disabled selected>
+              دسته بندی
+            </option>
+            {groups.map((group) => (
+              <option value={group._id} key={group._id}>
+                {group.name}
+              </option>
+            ))}
+          </select>
+          <select
+            key="select2"
+            className={`${styles.select} ${styles.selectGroup}`}
+            onChange={(e) => handleSorted(e.target.value)}
+            defaultValue={"All"}
+          >
+            <option value="" key="all" disabled selected>
+              مرتب سازی
+            </option>
+            <option value="highted" key="highted">
+              بالاترین قیمت
+            </option>
+            <option value="lowed" key="lowed">
+              کمترین قیمت
+            </option>
+          </select>
+        </div>
+        <div className={`${styles.favAllBtn}`}>
+          <div className={`${styles.all}`}>
+            <button value="" onClick={(e) => handleFilter(e.target.value)} className={`${styles.allBtn}`}>
+              All
+            </button>
+          </div>
+          <div className={`${styles.favorite}`}>
+            <button onClick={handleFavorites} className={`${styles.favoriteBtn}`}>
+              <BiHeart className={`${styles.heart}`} />
+              Favorites
+            </button>
+          </div>
+        </div>
       </div>
     </>
   );
-}
- 
+};
+
 export default Filter;

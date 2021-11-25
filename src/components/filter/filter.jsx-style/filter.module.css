@@ -9,9 +9,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 0 20px;
 }
 
@@ -22,12 +22,64 @@
   margin: 0 10px;
   border: none;
   border-radius: 6px;
-  padding: 6px 5px;
+  padding: 6px;
+  -webkit-transition: background-color .2s;
+  transition: background-color .2s;
+}
+
+.filter .select:hover {
+  background-color: #E9D5FF;
+  color: #6B21A8;
 }
 
 .filter .select option {
   color: #7E22CE;
   border: none;
+}
+
+.filter .favAllBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.filter .favAllBtn .all .allBtn {
+  width: 80px;
+  padding: 6px;
+  border: none;
+  background-color: #DBEAFE;
+  color: #1D4ED8;
+  border-radius: 6px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  margin: 0 15px;
+}
+
+.filter .favAllBtn .all .allBtn:hover {
+  background-color: #BFDBFE;
+  color: #1E40AF;
+}
+
+.filter .favAllBtn .favorite .favoriteBtn {
+  width: 140px;
+  padding: 6px;
+  border: none;
+  background-color: #FECACA;
+  color: #B91C1C;
+  border-radius: 6px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.filter .favAllBtn .favorite .favoriteBtn:hover {
+  background-color: #FCA5A5;
+  color: #991B1B;
 }
 
 .filter .selectGroup {

@@ -1,28 +1,79 @@
 @import './../../tools/colors/colors';
 
-.filter{
+.filter {
   max-width: 1500px;
   width: 100%;
   margin: 20px auto 0;
   text-align: center;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: space-between;
   padding: 0 20px;
-  .select{
+
+  .select {
     width: 100%;
     background-color: $purple_100;
     color: $purple_700;
     margin: 0 10px;
     border: none;
     border-radius: 6px;
-    padding: 6px 5px;
-    option{
+    padding: 6px;
+    transition: background-color .2s;
+
+    &:hover {
+      background-color: $purple_200;
+      color: $purple_800;
+    }
+
+    option {
       color: $purple_700;
       border: none;
     }
   }
-  .selectGroup{
+
+  .favAllBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .all {
+      .allBtn {
+        width: 80px;
+        padding: 6px;
+        border: none;
+        background-color: $blue_100;
+        color: $blue_700;
+        border-radius: 6px;
+        transition: 0.2s;
+        margin: 0 15px;
+
+        &:hover {
+          background-color: $blue_200;
+          color: $blue_800;
+        }
+      }
+    }
+
+    .favorite {
+      .favoriteBtn {
+        width: 140px;
+        padding: 6px;
+        border: none;
+        background-color: $red_200;
+        color: $red_700;
+        border-radius: 6px;
+        transition: 0.2s;
+
+        &:hover {
+          background-color: $red_300;
+          color: $red_800;
+        }
+      }
+    }
+  }
+
+
+  .selectGroup {
     width: 200px;
   }
 }

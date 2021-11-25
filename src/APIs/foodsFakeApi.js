@@ -3,7 +3,8 @@ const Products = [
     _id: "5b0ebcfb-5260-4e2b-891c-18fd2eb9ad77",
     title: "استیک با سس مخصوص",
     group: { _id: "312871ee-158a1768bd286da6S", name: "Steaks" },
-    image: 'https://wallpapershome.com/images/wallpapers/beef-3840x2160-steak-food-cooking-grill-vegetables-meal-meat-tomato-408.jpg',
+    image:
+      "https://wallpapershome.com/images/wallpapers/beef-3840x2160-steak-food-cooking-grill-vegetables-meal-meat-tomato-408.jpg",
     price: 148900,
     for: 1,
     quantity: 1,
@@ -14,7 +15,8 @@ const Products = [
     _id: "4c51b55e-70da-4550-833a-8693080b558c",
     title: "پیتزا گوشت و قارچ (ایتالیایی)",
     group: { _id: "51314b59-b502-cd1b88dc3245", name: "Pizzas" },
-    image: 'https://th.bing.com/th/id/R.a1c7af5c4df3a270e09c54cbe0edc6ae?rik=epbyXnTZfa%2frXw&riu=http%3a%2f%2fbakerpedia.com%2fwp-content%2fuploads%2f2014%2f09%2fPizza.jpg&ehk=jP9bVogYU969Bhzl6ED7%2b5UncGspoUkF1EGnQa%2bvkRY%3d&risl=&pid=ImgRaw&r=0',
+    image:
+      "https://th.bing.com/th/id/R.a1c7af5c4df3a270e09c54cbe0edc6ae?rik=epbyXnTZfa%2frXw&riu=http%3a%2f%2fbakerpedia.com%2fwp-content%2fuploads%2f2014%2f09%2fPizza.jpg&ehk=jP9bVogYU969Bhzl6ED7%2b5UncGspoUkF1EGnQa%2bvkRY%3d&risl=&pid=ImgRaw&r=0",
     price: 109000,
     for: 2,
     quantity: 2,
@@ -25,7 +27,7 @@ const Products = [
     _id: "231e92ab-bb3e-47fe-ac86-571864e3f6fe",
     title: "پاستا کاربونارا",
     group: { _id: "722c9fea-34076b719ea88f91", name: "Pastas" },
-    image: 'https://production-media.gousto.co.uk/cms/mood-image/1938---Simply-Perfect-Spag-Bol-4235-1576753790322-x700.jpg',
+    image: "https://production-media.gousto.co.uk/cms/mood-image/1938---Simply-Perfect-Spag-Bol-4235-1576753790322-x700.jpg",
     price: 79500,
     for: 1,
     quantity: 2,
@@ -36,7 +38,7 @@ const Products = [
     _id: "ac571960-1632-4dc3-ae6a-70a626a69fd1",
     title: "بیف استیک",
     group: { _id: "312871ee-158a1768bd286da6S", name: "Steaks" },
-    image: 'https://static.snapp-food.com/641x641/cdn/63/49/1/vendor/5fd79d8f4be81.jpeg',
+    image: "https://static.snapp-food.com/641x641/cdn/63/49/1/vendor/5fd79d8f4be81.jpeg",
     price: 129000,
     for: 1,
     quantity: 3,
@@ -47,7 +49,8 @@ const Products = [
     _id: "af421a31-0026-47b0-a122-79eaa49b1983",
     title: "چیکن برگر",
     group: { _id: "d655a065-0081-ae96bc7aa3ab", name: "Burgers" },
-    image: 'https://production-media.gousto.co.uk/cms/mood-image/2749_Bacon-Cheeseburger-Garlic-Butter-Fries-_-Truffle-Mayo-1868-1611056375850-x700.jpg',
+    image:
+      "https://production-media.gousto.co.uk/cms/mood-image/2749_Bacon-Cheeseburger-Garlic-Butter-Fries-_-Truffle-Mayo-1868-1611056375850-x700.jpg",
     price: 98500,
     for: 1,
     quantity: 1,
@@ -58,7 +61,7 @@ const Products = [
     _id: "621fba16-3213-4e15-8d10-020a4ef132ea",
     title: "پیتزا رست بیف",
     group: { _id: "51314b59-b502-cd1b88dc3245", name: "Pizzas" },
-    image: 'https://th.bing.com/th/id/OIP.g6ZNfmORnLxKvayW9X41SAHaE7?pid=ImgDet&rs=1',
+    image: "https://th.bing.com/th/id/OIP.g6ZNfmORnLxKvayW9X41SAHaE7?pid=ImgDet&rs=1",
     price: 124900,
     for: 2,
     quantity: 2,
@@ -69,7 +72,8 @@ const Products = [
     _id: "6e2e5fbc-0f13-435b-a3ff-fc0e27402fce",
     title: "دوبل چیز برگر",
     group: { _id: "d655a065-0081-ae96bc7aa3ab", name: "Burgers" },
-    image: 'https://production-media.gousto.co.uk/cms/mood-image/2120---UltimateCheeseburgerWithBaconAndRosemaryFries_SauceDrip-2-1606824115416-x700.jpg',
+    image:
+      "https://production-media.gousto.co.uk/cms/mood-image/2120---UltimateCheeseburgerWithBaconAndRosemaryFries_SauceDrip-2-1606824115416-x700.jpg",
     price: 119000,
     for: 2,
     quantity: 3,
@@ -80,7 +84,8 @@ const Products = [
     _id: "d6d9490e-c96d-4286-a350-62673c5d2708",
     title: "پیتزا بیف باربیکیو",
     group: { _id: "51314b59-b502-cd1b88dc3245", name: "Pizzas" },
-    image: 'https://th.bing.com/th/id/R.3c49c2cd0ca588e105a90991824a599b?rik=cXtm88xiTvVWuw&riu=http%3a%2f%2fthehouseandhomemagazine.com%2fdownloads%2f248%2fdownload%2fiStock-184340300.jpg%3fcb%3d0edd4dc04c871b3b015b9b957aa78dd9%26w%3d1200&ehk=98%2bzMVkgvHhkoqkryX%2bLZxBTWmZjWr3O4B4Rmd02cXo%3d&risl=&pid=ImgRaw&r=0',
+    image:
+      "https://th.bing.com/th/id/R.3c49c2cd0ca588e105a90991824a599b?rik=cXtm88xiTvVWuw&riu=http%3a%2f%2fthehouseandhomemagazine.com%2fdownloads%2f248%2fdownload%2fiStock-184340300.jpg%3fcb%3d0edd4dc04c871b3b015b9b957aa78dd9%26w%3d1200&ehk=98%2bzMVkgvHhkoqkryX%2bLZxBTWmZjWr3O4B4Rmd02cXo%3d&risl=&pid=ImgRaw&r=0",
     price: 97200,
     for: 1,
     quantity: 1,
@@ -95,7 +100,7 @@ const groups = [
   { _id: "d655a065-0081-ae96bc7aa3ab", name: "Burgers" },
   { _id: "312871ee-158a1768bd286da6S", name: "Steaks" },
   { _id: "722c9fea-34076b719ea88f91", name: "Pastas" },
-]
+];
 
 export function getProducts() {
   return Products;
