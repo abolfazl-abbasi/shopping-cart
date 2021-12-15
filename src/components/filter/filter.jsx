@@ -1,10 +1,15 @@
 import { useGroups, useProductsContextProvider } from "../providers/contextProvider";
 import styles from "./filter.jsx-style/filter.module.css";
 import { BiHeart } from "react-icons/bi";
+import axios from "axios";
 
 const Filter = () => {
   const { handleFilter, handleSorted, handleFavorites } = useProductsContextProvider();
   const groups = useGroups();
+  const handleData = async () => {
+    const { data } = await axios.get("/cartItems");
+    return data;
+  };
 
   return (
     <>
@@ -14,13 +19,13 @@ const Filter = () => {
             key="select1"
             className={`${styles.select} ${styles.selectGroup}`}
             onChange={(e) => handleFilter(e.target.value)}
-            defaultValue={"All"}
+            defaultValue=""
           >
             <option value="" key="all" disabled selected>
               دسته بندی
             </option>
             {groups.map((group) => (
-              <option value={group._id} key={group._id}>
+              <option value={group.id} key={group.id}>
                 {group.name}
               </option>
             ))}
@@ -29,7 +34,7 @@ const Filter = () => {
             key="select2"
             className={`${styles.select} ${styles.selectGroup}`}
             onChange={(e) => handleSorted(e.target.value)}
-            defaultValue={"All"}
+            defaultValue=""
           >
             <option value="" key="all" disabled selected>
               مرتب سازی

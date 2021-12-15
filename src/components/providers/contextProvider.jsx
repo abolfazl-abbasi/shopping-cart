@@ -1,6 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { getGroups, getProducts } from "../../APIs/foodsFakeApi";
 import _ from "lodash";
+import axios from "axios";
 
 const ProductsContext = React.createContext();
 const ProductsContextProvider = React.createContext();
@@ -8,7 +9,7 @@ const groupsContext = React.createContext();
 const groupsContextProvider = React.createContext();
 
 const ContextProvider = ({ children }) => {
-  const [products, setProducts] = useState(getProducts());
+  const [products, setProducts] = useState([]);
   const [groups, setGroups] = useState(getGroups());
   return (
     <ProductsContext.Provider value={products}>
@@ -29,57 +30,81 @@ export const useProductsContextProvider = () => {
   const products = useContext(ProductsContext);
   const [sort, setSort] = useState("");
   const [filter, setFilter] = useState("");
+  // console.log(sort);
 
-  const handleIncrement = (pro) => {
-    const updateProducts = [...products];
-    const index = updateProducts.indexOf(pro);
-    updateProducts[index] = { ...pro };
-    updateProducts[index].quantity++;
-    setProducts(updateProducts);
-  };
-
-  const handleDecrement = (pro) => {
-    if (pro.quantity <= 1) {
-      setProducts(products.filter((p) => p._id !== pro._id));
-    }
-    if (pro.quantity > 1) {
-      const updateProducts = [...products];
-      const index = updateProducts.indexOf(pro);
-      updateProducts[index] = { ...pro };
-      updateProducts[index].quantity--;
-      setProducts(updateProducts);
-    }
-  };
-
-  const handleLike = (pro) => {
-    const updateProducts = [...products];
-    const index = updateProducts.indexOf(pro);
-    updateProducts[index] = { ...pro };
-    updateProducts[index].liked = !updateProducts[index].liked;
-    setProducts(updateProducts);
-  };
-
-  const handleFilter = (e) => {
-    const mainProducts = getProducts().slice();
+  const handleFilter = async (e) => {
     if (e === "") {
-      setProducts(mainProducts);
+      const { data } = await axios.get("/cartItems");
+      await setProducts(data);
     }
     if (e !== "") {
-      setProducts(mainProducts.filter((pro) => pro.group._id.indexOf(e) >= 0));
+      const { data } = await axios.get("/cartItems");
+      setProducts(data.filter((pro) => pro.group.id.indexOf(e) >= 0));
       setFilter(e);
     }
   };
 
-  const handleSorted = (e) => {
-    if (e === "lowed") setProducts(_.orderBy(products, ["price"], ["asc"]));
-
-    if (e === "highted") setProducts(_.orderBy(products, ["price"], ["desc"]));
-
-    return setSort(e);
+  const handleLoad = async () => {
+    if (products === []) console.log("abol");
+    return <h5>Loading ...</h5>;
   };
 
-  const handleFavorites = () => {
-    if (products.some((e) => e.liked === true)) setProducts(_.filter(products, ["liked", true]));
+  const handleSorted = async (e) => {
+    const { data: desc } = await axios.get("/cartItems?_sort=price&_order=desc");
+    const { data: asc } = await axios.get("/cartItems?_sort=price&_order=asc");
+    setSort(e);
+    if (e === "lowed") await setProducts(asc);
+    if (e === "highted") await setProducts(desc);
+  };
+
+  useEffect(() => {
+    async function getPros() {
+      const { data } = await axios.get("/cartItems");
+      await setProducts(data);
+      await handleSorted(sort);
+    }
+    return getPros();
+  }, []);
+
+  const handleIncrement = async (pro) => {
+    await axios.put(`/cartItems/${pro.id}`, { ...pro, quantity: ++pro.quantity });
+    const { data } = await axios.get("/cartItems");
+    await setProducts(data);
+    handleSorted(sort);
+
+    // OK!
+  };
+
+  const handleDecrement = async (pro) => {
+    if (pro.quantity <= 1) {
+      await axios.delete(`/cartItems/${pro.id}`);
+      const { data } = await axios.get("/cartItems");
+      await setProducts(data);
+      handleSorted(sort);
+    }
+    if (pro.quantity > 1) {
+      await axios.put(`/cartItems/${pro.id}`, { ...pro, quantity: --pro.quantity });
+      const { data } = await axios.get("/cartItems");
+      await setProducts(data);
+      handleSorted(sort);
+    }
+    // OK!
+  };
+
+  const handleLike = async (pro) => {
+    await axios.put(`/cartItems/${pro.id}`, { ...pro, liked: !pro.liked });
+    const { data } = await axios.get("/cartItems");
+    await setProducts(data);
+    handleSorted(sort);
+
+    // OK!
+  };
+
+  const handleFavorites = async () => {
+    if (products.some((e) => e.liked === true)) {
+      await setProducts(_.filter(products, ["liked", true]));
+      handleSorted(sort);
+    }
   };
 
   const handleSearch = (e) => {
@@ -100,6 +125,7 @@ export const useProductsContextProvider = () => {
     handleSorted,
     handleFavorites,
     handleSearch,
+    handleLoad,
   };
 };
 
